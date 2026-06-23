@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beautifully Assisted — OBM and Virtual Executive Strategist</title>
+  <meta name="description" content="Online Business Manager and Virtual Executive Strategist with 15+ years of experience. High-level operational support for founders, coaches, and online business owners who are ready to grow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F1C2E;
+      --navy-deep: #0A1420;
+      --navy-mid: #0c1724;
+      --rose: #D4A090;
+      --rose-light: #E8C8B8;
+      --rose-muted: rgba(212,160,144,0.6);
+      --rose-faint: rgba(212,160,144,0.18);
+      --text-body: rgba(232,200,184,0.72);
+      --text-dim: rgba(232,200,184,0.45);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--rose-light);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(15,28,46,0.97);
+      border-bottom: 0.5px solid var(--rose-faint);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--rose);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(212,160,144,0.65);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--rose); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 9px 24px;
+      border: 0.5px solid var(--rose);
+      color: var(--rose);
+      background: transparent;
+      cursor: pointer;
+      font-weight: 400;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--rose);
+      color: var(--navy);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 0.5px;
+      background: var(--rose);
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(212,160,144,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.8;
+      margin-bottom: 1.75rem;
+      font-weight: 300;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(44px, 8vw, 72px);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--rose-light);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(232,200,184,0.5);
+      margin-bottom: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-body);
+      max-width: 540px;
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 15px 40px;
+      background: var(--rose);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: opacity 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 14px 40px;
+      background: transparent;
+      color: var(--rose);
+      border: 0.5px solid rgba(212,160,144,0.45);
+      cursor: pointer;
+      font-weight: 400;
+      transition: border-color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover { border-color: var(--rose); }
+
+    /* DIVIDER */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 3rem;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 0.5px;
+      background: var(--rose-faint);
+    }
+
+    .divider-mark {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: rgba(212,160,144,0.35);
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 0.5px solid var(--rose-faint);
+      border-bottom: 0.5px solid var(--rose-faint);
+    }
+
+    .stat {
+      padding: 2.75rem 2rem;
+      text-align: center;
+      border-right: 0.5px solid var(--rose-faint);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 500;
+      color: var(--rose);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 300;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: 6rem 3rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.75;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 500;
+      text-align: center;
+      color: var(--rose-light);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-body);
+      max-width: 480px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.85;
+      letter-spacing: 0.3px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rose-faint);
+      border: 0.5px solid var(--rose-faint);
+    }
+
+    .service-card {
+      background: var(--navy);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: background 0.25s;
+    }
+
+    .service-card:hover { background: #152435; }
+
+    .service-icon {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.7;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--rose-light);
+      line-height: 1.25;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+
+    /* ABOUT */
+    .about-wrap {
+      background: var(--navy-mid);
+      padding: 6rem 3rem;
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .about-quote {
+      font-family: var(--serif);
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--rose);
+      line-height: 1.5;
+      border-left: 1.5px solid rgba(212,160,144,0.35);
+      padding-left: 1.75rem;
+    }
+
+    .about-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.95;
+      letter-spacing: 0.3px;
+    }
+
+    .about-body p + p { margin-top: 1.25rem; }
+
+    .about-sig {
+      margin-top: 1.75rem;
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--rose);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* PROCESS */
+    .process {
+      padding: 6rem 3rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 400;
+      color: rgba(212,160,144,0.18);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-name {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--rose-light);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--rose);
+      padding: 5rem 3rem;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .cta-band p {
+      font-size: 14px;
+      color: rgba(15,28,46,0.7);
+      margin-bottom: 2.25rem;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-dark {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 15px 44px;
+      background: var(--navy);
+      color: var(--rose);
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: opacity 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-dark:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 3rem;
+      border-top: 0.5px solid var(--rose-faint);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(212,160,144,0.6);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(212,160,144,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--rose); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(232,200,184,0.3);
+      letter-spacing: 0.5px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero { padding: 5rem 1.5rem 4rem; }
+
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 0.5px solid var(--rose-faint); }
+      .stat:last-child { border-bottom: none; }
+
+      .services { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .about-wrap { padding: 4rem 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .process { padding: 4rem 1.5rem; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+      .cta-band { padding: 4rem 1.5rem; }
+
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+
+      .divider { padding: 0 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Beautifully Assisted</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://calendly.com/beautifullyassistedbj/30min" target="_blank" rel="noopener" class="nav-cta">Work With Me</a>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">OBM and Virtual Executive Strategist</p>
+    <h1 class="hero-title">Your Operations,<br><em>Beautifully Owned.</em></h1>
+    <p class="hero-tagline">High-level operational support for businesses that are ready to grow without the chaos.</p>
+    <p class="hero-body">You have a vision and the drive to match it. What you need is someone who can step in, take ownership of the backend, and make sure every system, timeline, and moving part is working the way it should. That is what Beautifully Assisted was built to do.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/beautifullyassistedbj/30min" target="_blank" rel="noopener" class="btn-primary">Book a Discovery Call</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-mark">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years of operational experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Remote and ready</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">OBM</div>
+      <div class="stat-label">Strategic ownership, not just task support</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="section-label">What I offer</p>
+    <h2 class="section-title">Operational Ownership<br><em>at Every Level of Your Business</em></h2>
+    <p class="section-sub">This is not task support. Every engagement is built around taking real ownership of your backend so you can focus on leading.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">OBM</div>
+        <div class="service-name">Online Business Management</div>
+        <div class="service-desc">Full backend oversight including team coordination, project management, SOP development, and operational strategy. You set the vision. I make sure everything behind it runs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Launch</div>
+        <div class="service-name">Launch Planning and Support</div>
+        <div class="service-desc">Project coordination and execution support for course, membership, and product launches. Timeline management, team oversight, and keeping every workstream on track from kickoff to close.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Funnel</div>
+        <div class="service-name">Funnel and Systems Buildout</div>
+        <div class="service-desc">Building and managing the backend infrastructure that connects your audience to your offer. Email automations, onboarding sequences, platform integrations, and customer journey mapping.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">SOPs</div>
+        <div class="service-name">SOP and Documentation Development</div>
+        <div class="service-desc">Creating the internal documentation your business needs to scale without losing consistency. Processes that your team can follow and that survive beyond any one person.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Exec</div>
+        <div class="service-name">Executive and Administrative Support</div>
+        <div class="service-desc">High-level calendar management, inbox triage, client communications, and executive coordination for leaders who need their time and attention protected.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Content</div>
+        <div class="service-name">Content and Communications</div>
+        <div class="service-desc">Newsletters, social copy, and marketing content that sounds like you and keeps your audience engaged without pulling you away from the work that needs your full attention.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-mark">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-wrap" id="about">
+    <div class="about-inner">
+      <div class="about-quote">"Most people need someone who can think and do. That is exactly what I bring to every business I work with."</div>
+      <div>
+        <div class="about-body">
+          <p>I'm Brittany Davenport-Jeffcoat — OBM, Virtual Executive Strategist, and founder of Beautifully Assisted. I have spent 15 years inside the operational backbone of businesses across government, healthcare, and the online space.</p>
+          <p>I built my own digital business from the ground up, serving as my own OBM. I built the funnel infrastructure, the email automation system, the product suite, the SOPs, and the launch strategy. That experience changed how I show up for every client because I understand the stakes from the inside.</p>
+          <p>I do not just check tasks off a list. I take ownership, ask the questions that prevent problems before they happen, and treat your business with the same care I bring to my own.</p>
+          <div class="about-sig">— Brittany Davenport-Jeffcoat</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Simple to Start,<br><em>Seamless to Sustain</em></h2>
+    <p class="section-sub">Working together should feel easy from the very first conversation.</p>
+
+    <div class="process-steps">
+      <div>
+        <div class="step-num">01</div>
+        <div class="step-name">Discovery Call</div>
+        <div class="step-desc">We talk through where you are, where you're going, and what's standing in the way.</div>
+      </div>
+      <div>
+        <div class="step-num">02</div>
+        <div class="step-name">Custom Proposal</div>
+        <div class="step-desc">You receive a clear scope, timeline, and investment level tailored to your actual needs.</div>
+      </div>
+      <div>
+        <div class="step-num">03</div>
+        <div class="step-name">Onboarding</div>
+        <div class="step-desc">We set up your systems, tools, and communication preferences so nothing falls through the cracks.</div>
+      </div>
+      <div>
+        <div class="step-num">04</div>
+        <div class="step-name">Execution</div>
+        <div class="step-desc">You lead. I handle the rest — consistently, quietly, and at the highest standard.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" id="contact">
+    <h2>Ready for Someone to Own It With You?</h2>
+    <p>Let's talk about where your business is right now and what it needs to get to the next level.</p>
+    <a href="https://calendly.com/beautifullyassistedbj/30min" target="_blank" rel="noopener" class="btn-dark">Book Your Discovery Call</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Beautifully Assisted</div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="mailto:beautifullyassistedbj@gmail.com">Contact</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Beautifully Assisted. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
